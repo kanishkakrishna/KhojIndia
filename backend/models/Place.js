@@ -4,6 +4,7 @@ const placeSchema = new mongoose.Schema({
   state: String,
   district: String,
   localName: String,
+  description: String,
   nearbyLandmark: String,
   nearbyDhabas: [String],
   nearbyLodges: [String],

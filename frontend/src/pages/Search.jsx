@@ -139,9 +139,6 @@ function SearchPage() {
                           <span>{place.likes || 0}</span>
                         </div>
                       </div>
-                      <button className="text-orange-600 hover:text-orange-700 font-semibold text-sm transition-colors">
-                        Explore →
-                      </button>
                     </div>
                   </div>
                 </div>
