@@ -7,13 +7,14 @@ import Places from "./pages/Places";
 import Search from "./pages/Search";
 import Leaderboard from "./pages/Leaderboard";
 import Navbar from "./components/Navbar";
+import Homepage from "./components/Homepage"; // Add this import
 
 function App() {
   return (
     <BrowserRouter>
-      <Navbar /> {/* ✅ Add this above Routes */}
+      <Navbar />
       <Routes>
-        <Route path="/" element={<h1>Welcome to KhojIndia</h1>} />
+        <Route path="/" element={<Homepage />} /> {/* ✅ Updated this line */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/contribute" element={<Contribute />} />
@@ -26,4 +27,3 @@ function App() {
 }
 
 export default App;
-

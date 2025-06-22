@@ -39,7 +39,7 @@ function Leaderboard() {
   }, []);
 
   return (
-    <div className="p-4 max-w-3xl mx-auto">
+    <div className="p-4 max-w-full mx-auto">
       <h2 className="text-3xl font-bold mb-4 text-center">🏆 Top Contributors</h2>
       
       {isLoading ? (
