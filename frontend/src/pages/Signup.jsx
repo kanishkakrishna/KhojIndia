@@ -27,6 +27,7 @@ function Signup() {
 
       {/* Header */}
       <div className="text-center py-8">
+        <h1>''''</h1>
         <h1 className="text-5xl font-bold text-gray-800">
           <span className="text-orange-600">Khoj</span>
           <span className="text-green-600">India</span>
