@@ -39,21 +39,21 @@ function Contribute() {
     setLoading(true);
 
     const data = new FormData();
-    Object.entries(form).forEach(([key, value]) => {
-      // Only append the image if it's not null (i.e., if a file was selected)
-      if (key === "image" && value === null) {
-        // Skip appending image if it's null (optional field)
-        return;
-      }
-      data.append(key, value);
-    });
+    
+    // Append form fields explicitly
+    data.append('localName', form.localName);
+    data.append('state', form.state);
+    data.append('district', form.district);
+    data.append('description', form.description);
+    
+    // Only append image if it exists
+    if (form.image) {
+      data.append('image', form.image);
+    }
 
     try {
-      const res = await API.post("/contribute", data, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      // CRITICAL: Don't set Content-Type header - let browser handle it
+      const res = await API.post("/contribute", data);
 
       alert("✅ Place contributed successfully!");
       setForm({
@@ -66,6 +66,13 @@ function Contribute() {
       setFileInputKey(Date.now());
     } catch (err) {
       console.error("Contribution error:", err);
+      
+      // Log more details for debugging
+      if (err.response) {
+        console.error("Response data:", err.response.data);
+        console.error("Response status:", err.response.status);
+      }
+      
       alert(err.response?.data?.error || "❌ Failed to contribute place. Please try again.");
     } finally {
       setLoading(false);
@@ -78,7 +85,6 @@ function Contribute() {
       <div className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="text-center">
-            <h1>'''</h1>
             <h1 className="text-4xl font-bold">
               <span className="text-orange-500">Khoj</span>
               <span className="text-green-500">India</span>
