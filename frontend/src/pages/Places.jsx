@@ -34,7 +34,7 @@ function Places() {
 
   return (
     <div className="p-4 max-w-7xl mx-auto">
-      <h2>""""</h2>
+      <h1>""""</h1>
           <h1 className="text-5xl font-bold mb-4 text-orange-600">🏝️ Places</h1>
 
       {isLoading ? (
