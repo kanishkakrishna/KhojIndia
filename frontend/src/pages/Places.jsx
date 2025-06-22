@@ -41,7 +41,7 @@ function Places() {
       ) : error ? (
         <p className="text-center text-red-600 text-lg p-4 bg-red-100 rounded-lg">{error}</p>
       ) : places.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {places.map((place) => (
             <div
               key={place._id}
