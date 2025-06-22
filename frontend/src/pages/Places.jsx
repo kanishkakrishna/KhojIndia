@@ -33,7 +33,7 @@ function Places() {
   }, []);
 
   return (
-    <div className="px-4 sm:px-6 md:px-8 w-full">
+    <div className="p-4 max-w-7xl mx-auto">
       <h2 className="text-3xl font-bold mb-6 text-center">🗺️ All Contributed Places</h2>
 
       {isLoading ? (
@@ -41,7 +41,7 @@ function Places() {
       ) : error ? (
         <p className="text-center text-red-600 text-lg p-4 bg-red-100 rounded-lg">{error}</p>
       ) : places.length > 0 ? (
-        <div className="grid gap-6 grid-cols-[repeat(auto-fit,minmax(250px,1fr))]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {places.map((place) => (
             <div
               key={place._id}
