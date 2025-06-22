@@ -4,7 +4,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Contribute from "./pages/Contribute";
 import Places from "./pages/Places";
-import Search from "./pages/Search";
+import SearchPage from "./pages/Search";
 import Leaderboard from "./pages/Leaderboard";
 import Navbar from "./components/Navbar";
 import Homepage from "./components/Homepage"; // Add this import
@@ -19,7 +19,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/contribute" element={<Contribute />} />
         <Route path="/places" element={<Places />} />
-        <Route path="/search" element={<Search />} />
+        <Route path="/search" element={<SearchPage />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
       </Routes>
     </BrowserRouter>
